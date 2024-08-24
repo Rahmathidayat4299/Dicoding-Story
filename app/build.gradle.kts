@@ -70,8 +70,10 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+
     implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.material3.android)
+    implementation(libs.androidx.lifecycle.runtime.compose.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -83,11 +85,14 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
+    //coil image
+    implementation(libs.coil.compose)
 
     // unit testing
     testImplementation(libs.mockk.android)
     testImplementation(libs.mockk.agent)
     testImplementation(libs.kotlinx.coroutines.test)
+    implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.turbine)
     implementation(libs.coil)
     implementation(libs.androidx.datastore.preferences)
@@ -101,8 +106,34 @@ dependencies {
     releaseImplementation(libs.library.no.op)
     // koin
     implementation(libs.koin.android)
+    implementation (libs.koin.androidx.compose)
     // rule viewmodel
     testImplementation(libs.androidx.core.testing)
-    //compose koin
-    implementation (libs.koin.androidx.compose)
+    //compose navigation
+    implementation (libs.androidx.navigation.compose)
+    //lat and lon to show location
+    implementation (libs.play.services.location)
+    //paging 3
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.compose)
+    //datetime
+    implementation (libs.jetbrains.kotlinx.datetime)
+    // CameraX
+    val cameraxVersion = "1.3.0-rc01"
+
+    implementation("androidx.camera:camera-core:$cameraxVersion")
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-video:$cameraxVersion")
+
+    implementation("androidx.camera:camera-view:$cameraxVersion")
+    implementation("androidx.camera:camera-extensions:$cameraxVersion")
+
+    // Permissions
+    implementation("com.google.accompanist:accompanist-permissions:0.31.3-beta")
+
+    // Icons
+    implementation("androidx.compose.material:material-icons-extended:1.6.8")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+
 }
